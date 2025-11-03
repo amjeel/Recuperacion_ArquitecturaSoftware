@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tecnologias Angel</title>
-</head>
+    <title>Angel technologys</title>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="css/style.css">
 <body>
-    
+    <header class="container">
+        <nav>
+            <ul>
+                <li><b>Tecnologias y Accesorios Angel</b></li>
+            </ul>
+        </nav>
+    </header>
+
+      <main class="container">
+        <h2>Integrantes del equipo</h2>
+
+        <div class="tabla-scroll">
+            <table id="tabla" class="overflow-auto striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Stock</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Categoria</th>
+                        <th>Decripcion</th>
+                        <TH>ACCIONES</TH>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        
+    </main>
+     <dialog id="mdAgregar">
+        <article>
+            <header>
+                <a href="#" class="close" id="cerrarModal"></a>
+                <h3>Agregar productos</h3>
+            </header>
+            <form id="frmAgregar">
+                <input type="text" id="txtNombre" placeholder="Nombre" required>
+                <input type="text" id="txtPrecio" placeholder="Precio" required>
+                <input type="text" id="txtCategoria" placeholder="Categoria" required>
+                <input type="text" id="txtStock" placeholder="Stock" required>
+                <input type="text" id="txtDescrpcion" placeholder="Descipcion" required>
+                <button type="submit" class="contrast">Guardar producto</button>
+            </form>
+        </article>
+    </dialog>
+
+    <dialog id="mdEditar">
+        <article>
+            <header>
+                <a href="#" class="close" id="cerrarEditar"></a>
+                <h3>Editar Producto</h3>
+            </header>
+            <form id="frmEditar">
+                <input type="hidden" id="txtIdEdit"> 
+                <input type="text" id="txtNombreEdit" placeholder="Nombre" required>
+                <input type="text" id="txtPrecioEdit" placeholder="Precio" required>
+                <input type="text" id="txtCategoriaEdit" placeholder="Categoria" required>
+                <input type="text" id="txtStockEdit" placeholder="Stock" required>
+                <input type="text" id="txtDescrpcionEdit" placeholder="Descipcion" required>
+                <button type="submit" class="contrast">Guardar Producto</button>
+            </form>
+        </article>
+    </dialog>
+
+    <button class="add-button" id="btnAgregar" title="agregar producto">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" 
+  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-plus-icon lucide-circle-plus">  
+    <circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+    </button>
+
+    <script src="js/index.js"></script>
 </body>
 </html>

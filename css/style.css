@@ -1,0 +1,37 @@
+.add-button {
+    position: fixed; /*el boton flota*/
+
+    bottom: 30px ; /*el boton flota*/
+
+    right: 40px;/*el boton flota*/
+
+    background-color: rgb(224, 255, 224);/*el boton flota*/
+
+    color: white;/*el boton flota*/
+
+    border-radius: 50%;/*el boton flota*/
+
+    border: none;/*el boton flota*/
+
+    width: 70px;/*el boton flota*/
+    height: 70px;/*el boton flota*/
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);/*el boton flota*/
+
+    display: flex;/*el boton flota*/
+
+    justify-content: center;/*el boton flota*/
+    align-items: center;/*el boton flota*/
+
+    z-index: 1001;/*el boton flota*/
+
+    transition: transform 0.3s;/*el boton flota*/
+}
+
+.add-button:hover {
+    transform: scale(1.2)
+}
+
+.tabla-scroll{
+    overflow-x: auto;
+}
