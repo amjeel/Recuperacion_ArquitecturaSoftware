@@ -2,9 +2,7 @@ const API_URL = 'https://retoolapi.dev/jQZZhI/data'
 
 async function ObtenerProductos(){
     const respuesta = await fetch (API_URL);
-
     const data = await respuesta.json(); 
-
     MostrarProductos(data)
 }
 
@@ -15,17 +13,17 @@ function MostrarProductos(datos){
 
     datos.forEach(producto => 
         {
+
             tabla.innerHTML += `
             <tr>
                 <td> ${producto.id} </td>
-                <td> ${producto.Stock} </td>     
-                <td> ${producto.Nombre} </td>         
-                <td> ${producto.Precio} </td>      
+                <td> ${producto.Stock} </td>    
+                <td> ${producto.Nombre} </td>        
+                <td> ${producto.Precio} </td>        
                 <td> ${producto.Categoria} </td>      
-                <td> ${producto.Descripcion} </td>  
+                <td> ${producto.Descripcion} </td>    
                 <td>
-                    <button onclick = "AbrirModalEditar('${producto.id}', '${producto.Stock}', '${producto.Nombre}', '${producto.Precio}', '${producto.Categoria}', '${producto.Descripcion}')"> Editar </button>
-                    <button onclick = "EliminarProducto(${producto.id})"> Eliminar </button>
+                    <button onclick = "AbrirModalEditar('${producto.id}', '${producto.Stock}', '${producto.Nombre}', '${producto.Precio}', '${producto.Categoria}', '${producto.Descripcion}')"> Editar </button>                    <button onclick = "EliminarProducto(${producto.id})"> Eliminar </button>
                 </td>
             </tr>
             `;
@@ -69,14 +67,14 @@ document.getElementById("frmAgregar").addEventListener("submit", async e =>{
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({Stock, Nombre, Precio, Categoria, Descripcion})
     });
- 
+    
     if(respuesta.ok){
         alert("El producto fue agregado correctamente");
- 
+    
         document.getElementById("frmAgregar").reset();
- 
+    
         modal.close();
- 
+    
         ObtenerProductos();
     }
     else{
@@ -124,23 +122,23 @@ document.getElementById("frmEditar").addEventListener("submit", async e =>{
     const Categoria = document.getElementById("txtCategoriaEdit").value.trim();
     const Descripcion = document.getElementById("txtDescrpcionEdit").value.trim();
 
-     if(!Stock|| !Nombre || !Precio || !Categoria || !Descripcion){
-         alert("Complete todos los campos")
-         return;
-     }
+      if(!Stock|| !Nombre || !Precio || !Categoria || !Descripcion){
+          alert("Complete todos los campos")
+          return;
+      }
 
-     const respuesta = await fetch(`${API_URL}/${id}`, {
+      const respuesta = await fetch(`${API_URL}/${id}`, {
         method: "PUT",
         headers: {'Content-Type':'application/json'},
         body: JSON.stringify({Stock,Nombre,Precio,Categoria,Descripcion})
-     });
+      });
 
-     if(respuesta.ok){
+      if(respuesta.ok){
         alert("el producto fue actualizado exitosamente");
         modalEditar.close();
         ObtenerProductos();
-     }
-     else{
+      }
+      else{
         alert("Hubo un error a la hora de actualizar")
-     }
+      }
 });
