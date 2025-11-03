@@ -1,37 +1,177 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFAF0; 
+    color: #ffffff;
+}
+
+header {
+    background-color: #1F3A93;
+    color: white; 
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+header.container nav ul li b {
+    color: white; 
+    font-size: 80% ; 
+    font-weight: 700;
+}
+
+.tabla-container {
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tabla-scroll {
+    overflow-x: auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+#tabla {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; 
+}
+
+#tabla thead {
+    background-color: #E0E0E0; 
+    color: #333;
+    font-weight: 700;
+}
+
+#tabla th, #tabla td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; 
+    word-wrap: break-word; 
+    max-width: 250px;
+}
+
 .add-button {
-    position: fixed; /*el boton flota*/
-
-    bottom: 30px ; /*el boton flota*/
-
-    right: 40px;/*el boton flota*/
-
-    background-color: rgb(224, 255, 224);/*el boton flota*/
-
-    color: white;/*el boton flota*/
-
-    border-radius: 50%;/*el boton flota*/
-
-    border: none;/*el boton flota*/
-
-    width: 70px;/*el boton flota*/
-    height: 70px;/*el boton flota*/
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);/*el boton flota*/
-
-    display: flex;/*el boton flota*/
-
-    justify-content: center;/*el boton flota*/
-    align-items: center;/*el boton flota*/
-
-    z-index: 1001;/*el boton flota*/
-
-    transition: transform 0.3s;/*el boton flota*/
+    position: fixed;
+    bottom: 30px;
+    right: 40px;
+    background-color: #5BC0EB;
+    color: #1F3A93; 
+    font-size: 30px; 
+    border-radius: 50%;
+    border: none;
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.3s ease;
 }
 
 .add-button:hover {
-    transform: scale(1.2)
+    background-color: #31A8DE; 
+    transform: scale(1.1); 
 }
 
-.tabla-scroll{
-    overflow-x: auto;
+#tabla td:last-child {
+    white-space: nowrap; 
+}
+
+#tabla button {
+    padding: 6px 10px;
+    margin: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+#tabla button:first-of-type { 
+    background-color: #FFC107; 
+    color: #333;
+}
+
+#tabla button:first-of-type:hover {
+    background-color: #E0A800;
+}
+
+#tabla button:last-of-type { 
+    background-color: #DC3545; 
+    color: white;
+}
+
+#tabla button:last-of-type:hover {
+    background-color: #C82333;
+}
+
+dialog {
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 90%;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-actions button[type="submit"] {
+    background-color: #1F3A93; 
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-actions button[type="submit"]:hover {
+    background-color: #14285D;
+}
+
+.modal-actions button:not([type="submit"]) {
+    background-color: #CCCCCC;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-actions button:not([type="submit"]):hover {
+    background-color: #B3B3B3;
 }
